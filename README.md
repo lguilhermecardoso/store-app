@@ -2,6 +2,17 @@
 
 Este é um aplicativo desenvolvido utilizando React Native com Expo. O projeto está configurado para usar Yarn como gerenciador de pacotes, mas também é compatível com PNPM. A seguir, você encontrará detalhes sobre as tecnologias utilizadas, a estrutura do diretório e as instruções para rodar a aplicação e executar os testes.
 
+## Screens Shots
+
+
+https://github.com/lguilhermecardoso/store-app/assets/15979107/120023fd-0697-452b-8b54-51aa112b3adc
+
+<div>
+<img src="https://github.com/lguilhermecardoso/store-app/assets/15979107/d8a83d52-f3e6-40f1-9221-1fc05ae6df19" width="200"/>
+</div>
+
+
+
 ## Tecnologias Utilizadas
 
 - **[React Native com Expo](https://www.npmjs.com/package/expo):** Para desenvolvimento multiplataforma (iOS e Android).
