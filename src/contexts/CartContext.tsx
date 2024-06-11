@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from 'react';
 import { Product } from 'src/models/Product';
-import { cartReducer } from 'src/reducers/cart/reducer'
+import { cartReducer } from '@reducers/cart/reducer';
 
 interface CartContextType {
   products: Product[];

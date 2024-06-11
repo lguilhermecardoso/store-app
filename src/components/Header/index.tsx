@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { CartButton, CartSpan, CartSpanArea, Container, HeadersButtonsBase } from "./styles";
 import { MaterialIcons } from '@expo/vector-icons';
 import { useContext } from "react";
-import { CartContext } from "src/contexts/CartContext";
+import { CartContext } from "@contexts/CartContext";
 
 interface HeaderProps {
   onBack?: boolean;
@@ -22,6 +22,7 @@ export function Header({ onBack = false, isHome = false }: HeaderProps) {
     <Container isHome={isHome}>
       {onBack && (
         <HeadersButtonsBase
+          testID="back-button"
           onPress={() => navigation.goBack()}
         >
           <MaterialIcons name="arrow-back" size={24} color={theme.COLORS.GREEN_500} />
@@ -29,9 +30,10 @@ export function Header({ onBack = false, isHome = false }: HeaderProps) {
       )}
       <CartButton
         onPress={handleOpenCart}
+        testID="cart-button"
       >
         <CartSpanArea>
-          <CartSpan>{products.length}</CartSpan>
+          <CartSpan testID="cart-span">{products.length}</CartSpan>
         </CartSpanArea>
         <MaterialIcons name="shopping-cart" size={24} color={theme.COLORS.GREEN_500} />
       </CartButton>

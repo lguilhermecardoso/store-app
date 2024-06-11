@@ -5,7 +5,7 @@ import theme from "@theme/index";
 export function Loading() {
   return (
     <Container>
-      <ActivityIndicator color={theme.COLORS.GREEN_700} />
+      <ActivityIndicator testID="activity-indicator" color={theme.COLORS.GREEN_700} />
     </Container>
   )
 }

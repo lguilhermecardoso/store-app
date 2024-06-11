@@ -24,7 +24,16 @@
       ],
       "@utils/*": [
         "./src/utils/*"
-      ]
+      ],
+      "@reducers/*": [
+        "./src/reducers/*"
+      ],
+      "@contexts/*": [
+        "./src/contexts/*"
+      ],
+      "@src/*": [
+        "./src/*"
+      ],
     }
   }
 }

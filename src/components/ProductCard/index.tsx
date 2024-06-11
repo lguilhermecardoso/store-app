@@ -3,11 +3,12 @@ import { Container, ProductAddButton, ProductAddButtonText, ProductImage, Produc
 import { Product } from "src/models/Product";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useContext } from "react";
-import { CartContext } from "src/contexts/CartContext";
+import { CartContext } from "@contexts/CartContext";
 interface ProductCardProps {
   product: Product;
+  testID?: string;
 }
-export function ProductCard({product}: ProductCardProps) {
+export function ProductCard({product, testID}: ProductCardProps) {
 
   const { addProduct, products, removeProduct } = useContext(CartContext)
   function handleAddProductToCart() {
@@ -22,9 +23,9 @@ export function ProductCard({product}: ProductCardProps) {
     return products.some(p => p.id === product.id)
   }
   return (
-    <Container>
+    <Container testID={testID}>
       <ProductWrapper>
-        <ProductImage source={{uri: product.imageUrl}}/>
+        <ProductImage testID="product-image" source={{uri: product.imageUrl}}/>
         <ProductTitle> {product.name} </ProductTitle>
         <ProductPrice> {currencyFormatter(product.price)} </ProductPrice>
         {isProductInCart() ? (
@@ -33,7 +34,7 @@ export function ProductCard({product}: ProductCardProps) {
             <ProductRemoveButtonText>Remover</ProductRemoveButtonText>
           </ProductRemoveButton>
         ) : (
-          <ProductAddButton onPress={handleAddProductToCart}>
+          <ProductAddButton testID="add-button" onPress={handleAddProductToCart}>
             <ProductAddButtonText>
               <MaterialCommunityIcons name="cart-plus" size={20} color="white" />
               Comprar

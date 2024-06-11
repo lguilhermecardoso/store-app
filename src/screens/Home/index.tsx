@@ -2,7 +2,7 @@ import { ScrollView } from "react-native";
 import { Container, HomePageSubTitle, HomePageTitle, Loading, ProductHeaderArea, ProductListCategory, ProductListCount, ProductListGridArea, ProductListWrapper, ShowMoreButton, ShowMoreButtonText } from "./styles";
 import { Header } from "@components/Header";
 import { useEffect, useState } from "react";
-import { api } from "src/lib/axios";
+import { api } from "@src/lib/axios";
 import { ProductCard } from "@components/ProductCard";
 import { Product } from "src/models/Product";
 
@@ -52,7 +52,7 @@ export function Home() {
             </ProductHeaderArea>
             <ProductListGridArea testID="product-list">
                 {products.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                  <ProductCard key={product.id} product={product} testID={`product-${product.id}`} />
                 ))}         
             </ProductListGridArea>
           </>
